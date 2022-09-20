@@ -1,0 +1,36 @@
+/* @import url("http://127.0.0.1:5500/index.html") */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    font-size: 5ch;
+    /* background-image:conic-gradient(red,yellow,green); */
+    /* background-image:linear-gradient(red,yellow,green); */
+    background-color: rgb(149, 95, 95);
+    background-image: url("money.jpeg");
+    /* background-repeat: no-repeat; */
+    background-blend-mode: multiply;
+
+    color: white;
+
+    /* background-color: darkmagenta; */
+
+}
+.header{
+    background-color: rgb(179, 117, 31);
+    /* background-image: url("FiskLogo.png"); */
+    text-align: center;
+    background-blend-mode: multiply;
+}
+.header1{
+    font-size: 5ch;
+}
+.container{
+    width: 500px;
+    margin: 20px auto;
+}
