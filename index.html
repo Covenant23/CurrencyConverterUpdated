@@ -8,19 +8,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-          <header1>Currency Converter</h1>
+  <div class="container">
+    <div class="header">
+      <h1>Currency Converter</h1>
+    </div>
+    <div class="date">10-11-2022</div>
+    <ul class="currencies">
+      <li class="currency base-currency" id="USD">
+        <img src="https://www.geonames.org/flags/l/us.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#36;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">USD - US Dollar</p>
+          <p class="base-currency-rate">1 USD = 1 USD</p>
         </div>
-        <div class="date"></div>
-        <ul class="currencies">
-          <Items class="currency" id="USD">
-            <img src="FiskLogo.png" alt="" class="flag">
-          </Items>
+        <span class="close">&times;</span>
+      </li>
+      <li class="currency" id="JPV">
+        <img src="https://www.geonames.org/flags/l/jp.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#165;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">JPV - Japanese Yen</p>
+          <p class="base-currency-rate">1 USD = 146.27 JPV</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>    
+      <li class="currency" id="INR">
+        <img src="https://www.geonames.org/flags/l/in.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#8377;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">INR - Indian Rupee</p>
+          <p class="base-currency-rate">1 USD = 82.27 INR</p>
+        </div>
+        <span class="close">&times;</span>
+      </li> 
+      <li class="currency" id="CNY">
+        <img src="https://www.geonames.org/flags/l/cn.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#165;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">CNY - Chinese Yuan</p>
+          <p class="base-currency-rate">1 USD = 7.17 CNY</p>
+        </div>
+        <span class="close">&times;</span>
+      </li> 
 
-        </ul>
-        <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
-        <ul class="add-currency-list"></ul>
-      </div>
+    </ul>
+    <ul class="add-currency-list"></ul>
+    <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
+  </div>
 </body>
 </html>
