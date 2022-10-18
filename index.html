@@ -23,15 +23,24 @@
         </div>
         <span class="close">&times;</span>
       </li>
-      <li class="currency" id="JPV">
+      <li class="currency" id="JPY">
         <img src="https://www.geonames.org/flags/l/jp.gif" class="flag">
         <div class="info">
           <p class="input"><span class="currency-symbol">&#165;</span><input placeholder="0.0000"></p>
-          <p class="currency-name">JPV - Japanese Yen</p>
+          <p class="currency-name">JPY - Japanese Yen</p>
           <p class="base-currency-rate">1 USD = 146.27 JPV</p>
         </div>
         <span class="close">&times;</span>
       </li>    
+      <li class="currency" id="NGN">
+        <img src="https://www.geonames.org/flags/l/ng.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#8358;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">NGN - Nigerian Naira</p>
+          <p class="base-currency-rate">1 USD = 435.56 NGN</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>
       <li class="currency" id="INR">
         <img src="https://www.geonames.org/flags/l/in.gif" class="flag">
         <div class="info">
@@ -40,7 +49,34 @@
           <p class="base-currency-rate">1 USD = 82.27 INR</p>
         </div>
         <span class="close">&times;</span>
-      </li> 
+      </li>
+      <li class="currency" id="GHC">
+        <img src="https://www.geonames.org/flags/l/gh.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#8373;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">GHC - Ghanian Cedi</p>
+          <p class="base-currency-rate">1 USD = 11.64 GHC</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>
+      <li class="currency" id="NPR">
+        <img src="https://www.geonames.org/flags/l/np.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#8377;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">NPR - Nepalese Rupee</p>
+          <p class="base-currency-rate">1 USD = 130.58 NPR</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>
+      <li class="currency" id="GBP">
+        <img src="https://www.geonames.org/flags/l/uk.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#163;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">GBP - British Pound</p>
+          <p class="base-currency-rate">1 USD = 0.88 GBP</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>
       <li class="currency" id="CNY">
         <img src="https://www.geonames.org/flags/l/cn.gif" class="flag">
         <div class="info">
@@ -50,10 +86,26 @@
         </div>
         <span class="close">&times;</span>
       </li> 
+      <li class="currency" id="RUB">
+        <img src="https://www.geonames.org/flags/l/ru.gif" class="flag">
+        <div class="info">
+          <p class="input"><span class="currency-symbol">&#8381;</span><input placeholder="0.0000"></p>
+          <p class="currency-name">RUB - Russian Ruble</p>
+          <p class="base-currency-rate">1 USD = 62.05 RUB</p>
+        </div>
+        <span class="close">&times;</span>
+      </li>
 
     </ul>
-    <ul class="add-currency-list"></ul>
     <button class="add-currency-btn"><i class="fas fa-long-arrow-alt-left"></i>Add Currency</button>
+    <ul class="add-currency-list">
+      <li data-currency="USD" class="disabled"><img src="https://www.geonames.org/flags/l/us.gif" class="flag"><span> USD - US Dollar</span></li>
+      <li data-currency="JPY"> <img src="https://www.geonames.org/flags/l/jp.gif" class="flag"><span> JPY - Japanese Yen</span></li>
+      <li data-currency="NGN"> <img src="https://www.geonames.org/flags/l/ng.gif" class="flag"><span> NGN - Nigerian Naira</span></li>
+      <li data-currency="GHC"> <img src="https://www.geonames.org/flags/l/gh.gif" class="flag"><span> GHC - Ghanian Cedi</span></li>
+      <li data-currency="CHY"> <img src="https://www.geonames.org/flags/l/cn.gif" class="flag"><span> CNY - Chinese Yen</span></li>
+      
+    </ul>
   </div>
 </body>
 </html>
