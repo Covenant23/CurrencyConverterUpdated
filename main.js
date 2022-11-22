@@ -3,53 +3,50 @@ const addCurrencyBtn = document.querySelector(".add-currency-btn");
 const addCurrencyList = document.querySelector(".add-currency-list");
 const currenciesList = document.querySelector(".currencies");
 
+
+const dataURL = "https://api.exchangeratesapi.io/latest";
+
 const initiallyDisplayedCurrencies = ["USD", "JPY", "NGN", "GBP", "CAD"];
 
 let baseCurrency;
 let baseCurrencyAmount;
 
-const currencies = [
+let currencies = [
         {
           name: "US Dollar",
           abbreviation: "USD",
           symbol: "\u0024",
-          flagURL: "http://www.geonames.org/flags/l/us.gif",
-          rate: 0.99
+          flagURL: "http://www.geonames.org/flags/l/us.gif"
         },
         {
           name: "Euro",
           abbreviation: "EUR",
           symbol: "\u20AC",
-          flagURL: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
-          rate: 1
+          flagURL: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
         },
         {
           name: "Japanese Yen",
           abbreviation: "JPY",
           symbol: "\u00A5",
-          flagURL: "http://www.geonames.org/flags/l/jp.gif",
-          rate: 146.76
+          flagURL: "http://www.geonames.org/flags/l/jp.gif"
         },
         {
             name: "Nigerian Naira",
             abbreviation: "NGN",
             symbol: "\u20A6",
-            flagURL: "https://www.geonames.org/flags/l/ng.gif",
-            rate: 434.23
+            flagURL: "https://www.geonames.org/flags/l/ng.gif"
         },
         {
           name: "British Pound",
           abbreviation: "GBP",
           symbol: "\u00A3",
           flagURL: "http://www.geonames.org/flags/l/uk.gif"
-
         },
         {
           name: "Australian Dollar",
           abbreviation: "AUD",
           symbol: "\u0024",
-          flagURL: "http://www.geonames.org/flags/l/au.gif",
-          rate: 1.54
+          flagURL: "http://www.geonames.org/flags/l/au.gif"
         },
         {
           name: "Canadian Dollar",
@@ -300,6 +297,20 @@ function currenciesListInputChange(event){
     });
   }
 }
+
+currenciesList.addEventListener("focusout", currenciesListFocusOut);
+
+function currenciesListFocusOut(event){
+  const inputValue = event.target.value;
+  if(isNaN(inputValue) || Number(inputValue)===0)event.target.value="";
+  else event.target.value = Number(inputValue).toFixed(4);
+}
+
+currenciesList.addEventListener("keydown", currenciesListKeyDown);
+
+function currenciesListKeyDown(event){
+  if(event.key==="Enter")event.target.blur();
+}
 // other 
 
 function populateAddCurrencyList() {
@@ -343,6 +354,14 @@ function newCurrenciesListItem(currency) {
   );
 }
 
-populateAddCurrencyList();
-
-populateCurrenciesList();
+fetch(dataURL)
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector(".date").textContent = data.date;
+    data.rates["EUR"] = 1;
+    currencies = currencies.filter(currency => data.rates[currency.abbreviation]);
+    currencies.forEach(currency => currency.rate = data.rates[currency.abbreviation]);
+    populateAddCurrencyList();
+    populateCurrenciesList();
+  })
+  .catch(err => console.log(err));
